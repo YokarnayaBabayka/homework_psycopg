@@ -97,8 +97,6 @@ def delete_phone(conn, client_id, phone):
         phone_num = cur.fetchone()[0]
         phone_num_list = phone_num.split()
         phone_num_list.remove(phone)
-
-        print(phone_num_list)
         cur.execute(
             """
                 UPDATE client SET phones=%s WHERE id=%s;
